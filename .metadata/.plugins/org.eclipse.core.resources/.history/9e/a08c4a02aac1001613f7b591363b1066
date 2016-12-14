@@ -1,0 +1,16 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma bea:global-element-parameter parameter="$parametrosVerificaCreditoCliente1" element="ns1:parametrosVerificaCreditoCliente" location="../../../../../EBS/Credito/xsd/ParametrosCreditoGeral.xsd" ::)
+(:: pragma bea:global-element-return element="ns1:parametrosVerificaCreditoInterno" location="../../../../../EBS/Credito/xsd/ParametrosCredito.xsd" ::)
+
+declare namespace xf = "http://tempuri.org/OSB_Gladston/ServicosNegocio/Credito/Resources/Transformations/CreditoGeral/CreditoGeralRequestToCreditoInternoRequest/";
+declare namespace ns1 = "http://pucminas.br/SN/Credito";
+declare namespace ns0 = "http://pucminas.br/MC/SOA/Gladston";
+
+declare function xf:CreditoGeralRequestToCreditoInternoRequest($parametrosVerificaCreditoCliente1 as element(ns1:parametrosVerificaCreditoCliente))
+    as element(ns1:parametrosVerificaCreditoInterno) {
+        <ns1:parametrosVerificaCreditoInterno/>
+};
+
+declare variable $parametrosVerificaCreditoCliente1 as element(ns1:parametrosVerificaCreditoCliente) external;
+
+xf:CreditoGeralRequestToCreditoInternoRequest($parametrosVerificaCreditoCliente1)

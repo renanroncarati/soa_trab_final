@@ -1,0 +1,22 @@
+(:: pragma bea:global-element-parameter parameter="$resultadoVerificaCreditoExterno" element="ns1:resultadoVerificaCreditoExterno" location="../../../../EBS/Credito/xsd/ParametrosCredito.xsd" ::)
+(:: pragma bea:global-element-return element="ns1:resultadoVerificaCreditoCliente" location="../../../../EBS/Credito/xsd/ParametrosCreditoGeral.xsd" ::)
+
+declare namespace ns1 = "http://pucminas.br/SN/Credito";
+declare namespace ns0 = "http://pucminas.br/MC/SOA/Gladston";
+declare namespace xf = "http://tempuri.org/OSB_Gladston/ServicosNegocio/Credito/Resources/Transformations/CreditoExternoResponseToCreditoGeralCliente/";
+
+declare function xf:CreditoExternoResponseToCreditoGeralCliente($resultadoVerificaCreditoExterno as element(ns1:resultadoVerificaCreditoExterno))
+    as element(ns1:resultadoVerificaCreditoCliente) {
+        <ns1:resultadoVerificaCreditoCliente>
+            <ns1:score>200</ns1:score>
+            {
+                let $pessoa := $resultadoVerificaCreditoExterno/ns1:credito/ns0:pessoa
+                return
+                    <ns1:pessoa/>
+            }
+        </ns1:resultadoVerificaCreditoCliente>
+};
+
+declare variable $resultadoVerificaCreditoExterno as element(ns1:resultadoVerificaCreditoExterno) external;
+
+xf:CreditoExternoResponseToCreditoGeralCliente($resultadoVerificaCreditoExterno)

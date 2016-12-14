@@ -13,6 +13,24 @@
 			<element name="indicaCreditoInterno" type="boolean" />
 			<element name="indicaWhiteList" type="boolean" />
 			<element name="situacao" type="integer" />
+			<element name="valor" type="decimal"  minOccurs="1" maxOccurs="1"/>
+			<element name="restricoes" type="tns:ListaRestricoes"
+				minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="ListaRestricoes">
+		<sequence>
+			<element name="restricao" type="tns:restricao" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="restricao">
+		<sequence>
+			<element name="ds_restricao" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="valor" type="string" minOccurs="1" maxOccurs="1" />
 		</sequence>
 	</complexType>
 
