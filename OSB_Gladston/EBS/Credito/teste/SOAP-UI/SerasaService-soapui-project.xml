@@ -63,7 +63,7 @@
    <soapenv:Header/>
    <soapenv:Body>
       <ser:ResultadoSerasa>
-         <ser:num_documento>123456</ser:num_documento>
+         <ser:num_documento>000.000.000-25</ser:num_documento>
          <ser:valor_restricao>600</ser:valor_restricao>
       </ser:ResultadoSerasa>
    </soapenv:Body>

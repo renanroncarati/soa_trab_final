@@ -9,7 +9,7 @@
     <wsdl:part element="ser:ParametrosWhiteList" name="ParametrosInternalWhiteList"/>
   </wsdl:message>
   <wsdl:message name="InternalWhiteListResponse">
-    <wsdl:part element="ser:ParametrosWhiteList" name="ResultadoInternalWhiteList"/>
+    <wsdl:part element="ser:ResultadoWhiteList" name="ResultadoInternalWhiteList"/>
   </wsdl:message>
   <wsdl:portType name="InternalWhiteListService">
     <wsdl:operation name="ConsultarInternalWhiteList">
@@ -57,12 +57,20 @@
          <whit:dt_nascimento>?</whit:dt_nascimento>
       </whit:ParametrosWhiteList>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="357f1347-b5f4-4a46-9cbf-c4fc4c21a1e4" port="8090" path="/InternalWhiteListService" host="puc-VirtualBox" name="InternalWhiteListServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConsultarInternalWhiteList" id="f1410df0-bab7-49a0-ae69-dc3e124df755" interface="InternalWhiteListServiceSOAP" operation="ConsultarInternalWhiteList"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="2f587814-db58-40b9-97bf-eaba1430dc90" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:whit="http://whitelist.com.br/SN/WhiteList">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="65bc0d4e-866f-44bf-b305-65ae9bc66c50" port="8090" path="/InternalWhiteListService" host="puc-VirtualBox" name="InternalWhiteListServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConsultarInternalWhiteList" id="7a0f2394-4867-4767-9123-90df5e57a163" interface="InternalWhiteListServiceSOAP" operation="ConsultarInternalWhiteList"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c9c96526-b790-40ef-b4b9-4746ee3c59c6" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:whit="http://whitelist.com.br/SN/WhiteList">
    <soapenv:Header/>
    <soapenv:Body>
-      <whit:ParametrosWhiteList>
-         <whit:num_documento>123456</whit:num_documento>
-         <whit:dt_nascimento>2016-01-01</whit:dt_nascimento>
-      </whit:ParametrosWhiteList>
+      <whit:ResultadoWhiteList>
+         <whit:num_documento>000.000.000-25</whit:num_documento>
+         <whit:indica_white_list>true</whit:indica_white_list>
+      </whit:ResultadoWhiteList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/></con:response><con:response name="Response 2" id="d75df98f-ab69-43a7-837e-92665d69daa6" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:whit="http://whitelist.com.br/SN/WhiteList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <whit:ResultadoWhiteList>
+         <whit:num_documento>000.000.000-25</whit:num_documento>
+         <whit:indica_white_list>false</whit:indica_white_list>
+      </whit:ResultadoWhiteList>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
