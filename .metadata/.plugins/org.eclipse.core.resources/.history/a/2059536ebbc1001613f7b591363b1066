@@ -112,7 +112,7 @@
         	<bpel:extensionAssignOperation>
         		<trf:assign varName="response.parameters">
         			<trf:expr>
-        				<expr:xqueryText>$outputCreditoExterno.parameters</expr:xqueryText></trf:expr></trf:assign>
+        				<expr:xqueryText>$outputWhiteList.parameters</expr:xqueryText></trf:expr></trf:assign>
         	</bpel:extensionAssignOperation>
         </bpel:assign>
         <bpel:reply partnerLink="CreditoGeralSplitJoin" operation="verificaCreditoCliente" variable="response"></bpel:reply>

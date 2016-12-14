@@ -112,7 +112,10 @@
         	<bpel:extensionAssignOperation>
         		<trf:assign varName="response.parameters">
         			<trf:expr>
-        				<expr:xqueryText>$outputCreditoExterno.parameters</expr:xqueryText></trf:expr></trf:assign>
+        				<expr:xqueryText>if($outputCreditoExterno.parameters &gt; 400) then
+	$outputCreditoExterno.parameters
+else 
+	0</expr:xqueryText></trf:expr></trf:assign>
         	</bpel:extensionAssignOperation>
         </bpel:assign>
         <bpel:reply partnerLink="CreditoGeralSplitJoin" operation="verificaCreditoCliente" variable="response"></bpel:reply>
