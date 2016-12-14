@@ -67,4 +67,12 @@
          <ser:valor_restricao>600</ser:valor_restricao>
       </ser:ResultadoSerasa>
    </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/SerasaService/SerasaService"/></con:response><con:response name="Response 2" id="ffb7be79-64e7-47ce-95ec-a7ac6435a90b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://serasa.com.br/SN/Serasa">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ResultadoSerasa>
+         <ser:num_documento>000.000.000-25</ser:num_documento>
+         <ser:valor_restricao>300</ser:valor_restricao>
+      </ser:ResultadoSerasa>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/SerasaService/SerasaService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
