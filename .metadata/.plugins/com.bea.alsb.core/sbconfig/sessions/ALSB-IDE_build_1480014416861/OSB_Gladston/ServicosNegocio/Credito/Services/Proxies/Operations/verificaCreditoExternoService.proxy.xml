@@ -28,16 +28,10 @@
     </ser:ws-policy>
   </ser:coreEntry>
   <ser:endpointConfig>
-    <tran:provider-id>http</tran:provider-id>
+    <tran:provider-id>local</tran:provider-id>
     <tran:inbound>true</tran:inbound>
-    <tran:URI>
-      <env:value>/ServicosNegocio/Credito/verificaCreditoExternoService</env:value>
-    </tran:URI>
     <tran:inbound-properties/>
-    <tran:all-headers>false</tran:all-headers>
-    <tran:provider-specific>
-      <http:inbound-properties/>
-    </tran:provider-specific>
+    <tran:all-headers>true</tran:all-headers>
   </ser:endpointConfig>
   <ser:router>
     <con:pipeline type="request" name="PipelinePairOperacaoInexistente_request">
@@ -63,14 +57,14 @@
             <con:flow>
               <con:route-node name="RouteToSerasaService">
                 <con:context>
-                  <con2:userNsDecl namespace="http://creditlegacy.com.br/SN/Serasa" prefix="serasa"/>
+                  <con2:userNsDecl namespace="http://serasa.com.br/SN/Serasa" prefix="serasa"/>
                   <con2:varNsDecl namespace="http://pucminas.br/SN/Credito" prefix="cred"/>
                 </con:context>
                 <con:actions>
                   <con3:route>
                     <con2:id>_ActionId-1045064246571895454--62178d1b.1586fac43e5.-7f4f</con2:id>
                     <con3:service ref="OSB_Gladston/ServicosNegocio/Credito/Services/Proxies/SerasaProxyService" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                    <con3:operation>ConsultarSerasa</con3:operation>
+                    <con3:operation passThrough="true"/>
                     <con3:outboundTransform>
                       <con1:replace varName="body" contents-only="true">
                         <con2:id>_ActionId-1045064246571895454--62178d1b.1586fac43e5.-7f29</con2:id>

@@ -97,7 +97,7 @@
                           <con2:xqueryTransform>
                             <con2:resource ref="OSB_Gladston/ServicosNegocio/Credito/Resources/Transformations/InternalWhiteListResponseToWhiListResponse"/>
                             <con2:param name="resultadoWhiteList">
-                              <con2:path>$body/wl/ResultadoWhiteList</con2:path>
+                              <con2:path>$body/wl:ResultadoWhiteList</con2:path>
                             </con2:param>
                           </con2:xqueryTransform>
                         </con1:expr>

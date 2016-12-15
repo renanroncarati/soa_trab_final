@@ -15,6 +15,16 @@ declare function xf:CreditLegacyResponseToCreditoInternoResponse($resultadoCredi
                 <ns0:pessoa>
                     <ns0:cnpj>{ data($resultadoCreditLegacy1/ns1:cpf) }</ns0:cnpj>
                 </ns0:pessoa>
+                <ns0:restricoes>
+                    {
+                        for $restricao in $resultadoCreditLegacy1/ns1:restricoes/ns1:restricao
+                        return
+                            <ns0:restricao>
+                                <ns0:ds_restricao>{ data($restricao/ns1:ds_restricao) }</ns0:ds_restricao>
+                                <ns0:valor>{ data($restricao/ns1:valor) }</ns0:valor>
+                            </ns0:restricao>
+                    }
+                </ns0:restricoes>
             </ns2:credito>
         </ns2:resultadoVerificaCreditoInterno>
 };
